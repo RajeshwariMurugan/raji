@@ -1,0 +1,87 @@
+JavaScriptExecutor
+--------------------
+1. JavaScriptExecutor is a interface
+2. Scrolling function , css related
+3. selenium related function also used like sendkeys , click'
+=============================
+package demo;
+
+import java.time.Duration;
+
+import org.jspecify.annotations.Nullable;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class JavaScriptExecutorDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver driver=new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.manage().window().maximize();
+		driver.get("https://testautomationpractice.blogspot.com/");
+		
+		WebElement element = driver.findElement(By.id("name"));
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].value='oranium';", element);
+		
+		js.executeScript("arguments[0].style.color='red';", element);
+		
+		WebElement element2 = driver.findElement(By.id("alertBtn"));
+		js.executeScript("arguments[0].click()", element2);
+		
+		Alert a=driver.switchTo().alert();
+		a.accept();
+		
+		js.executeScript("window.scrollBy(0,500)");
+		
+		WebElement element3 = driver.findElement(By.id("droppable"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element3);
+		System.out.println("done");
+		
+		js.executeScript("history.go(0)");
+		
+		  String string = js.executeScript("return document.URL").toString();
+		
+		
+		driver.quit();
+		
+		
+		
+
+	}
+
+}
+======================================================
+
+package demo;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CheckingLucky {
+
+	public static void main(String[] args) {
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://www.google.com/");
+		
+		WebElement element = driver.findElement(By.name("btnI"));
+		//element.click();
+		
+//		Actions act=new Actions(driver);
+//		act.moveToElement(element).click().build().perform();
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()", element);
+		
+		System.out.println("done");
+	}
+}
+===========================================
