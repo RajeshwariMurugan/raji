@@ -34,13 +34,6 @@ Welcome to my **SQL & MySQL Notes Repository** 🚀 — a comprehensive collecti
 2. Try the queries on **MySQL/Postgres/SQL Server** 🖥️
 3. Use for **learning, practice, or interview prep** 🎓
 
----
-
-## 🤝 Connect
-
-* 📧 Email: **[dhanrajsharma1313@gmail.com](mailto:dhanrajsharma1313@gmail.com)**
-* 💼 LinkedIn: [DHANRAJ SHARMA](https://www.linkedin.com/in/dhanraj-sharma-nddimension/)
-* 🐙 GitHub: [NDDimension](https://github.com/NDDimension)
 
 ---
 
